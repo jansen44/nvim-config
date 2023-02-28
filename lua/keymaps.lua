@@ -11,6 +11,8 @@ vim.g.mapleader = ' '
 map('n', '<leader>h', ':nohl<CR>')
 
 map('n', '<leader>e', ':NvimTreeToggle<CR>')
+map('n', '<leader>c', ':bdelete<CR>')
+map('n', '<leader>bj', ':BufferLinePick<CR>')
 map('n', '<leader>bn', ':BufferLineCycleNext<CR>')
 map('n', '<leader>bb', ':BufferLineCyclePrev<CR>')
 

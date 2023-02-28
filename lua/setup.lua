@@ -9,6 +9,4 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.clipboard = 'unnamedplus'
 
-vim.cmd[[colorscheme tokyonight]]
-
 vim.opt.termguicolors = true

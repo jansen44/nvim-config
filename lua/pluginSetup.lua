@@ -1,3 +1,5 @@
+vim.cmd[[colorscheme tokyonight]]
+
 require("nvim-tree").setup()
 
 require("bufferline").setup{
