@@ -1,4 +1,5 @@
 require("nvim-tree").setup()
+
 require("bufferline").setup{
     options = {
         separator_style = "slant" or "padded_slant",
