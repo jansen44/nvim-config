@@ -1,5 +1,5 @@
 return require('packer').startup(function(use)
-	use 'wbthomason/packer.nvim'
+    use 'wbthomason/packer.nvim'
 
     use {
         "williamboman/mason.nvim",
@@ -7,20 +7,22 @@ return require('packer').startup(function(use)
         "neovim/nvim-lspconfig",
         "mfussenegger/nvim-dap",
         "jose-elias-alvarez/null-ls.nvim",
+        "simrat39/rust-tools.nvim"
+
     }
 
     use 'github/copilot.vim'
 
-	use 'nvim-lua/plenary.nvim'
+    use 'nvim-lua/plenary.nvim'
 
-	use 'nvim-telescope/telescope.nvim'
+    use 'nvim-telescope/telescope.nvim'
 
-	use 'BurntSushi/ripgrep'
+    use 'BurntSushi/ripgrep'
 
-	use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+    use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
 
-	use 'nvim-treesitter/nvim-treesitter'
-	use 'JoosepAlviste/nvim-ts-context-commentstring'
+    use 'nvim-treesitter/nvim-treesitter'
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
     use {
         'numToStr/Comment.nvim',
         config = function()
@@ -28,14 +30,14 @@ return require('packer').startup(function(use)
         end
     }
 
-	use 'folke/tokyonight.nvim'
+    use 'folke/tokyonight.nvim'
 
-	use {
-		'nvim-tree/nvim-tree.lua',
-		requires = {
-			'nvim-tree/nvim-web-devicons',
-		}
-	}
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons',
+        }
+    }
 
     use {
         'hrsh7th/cmp-nvim-lsp',
@@ -49,13 +51,13 @@ return require('packer').startup(function(use)
 
     use {
         "leoluz/nvim-dap-go",
-        "mxsdev/nvim-dap-vscode-js" 
+        "mxsdev/nvim-dap-vscode-js"
     }
 
-    use   {
+    use {
         "microsoft/vscode-js-debug",
         opt = true,
-        run = "npm install --legacy-peer-deps && npm run compile" 
+        run = "npm install --legacy-peer-deps && npm run compile"
     }
 
     use 'andweeb/presence.nvim'
