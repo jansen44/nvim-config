@@ -54,3 +54,8 @@ vim.keymap.set({ "n" }, "<leader>lg", function()
     local term = Terminal:new({ cmd = "lazygit", direction = "float", size = 0.8 })
     term:toggle()
 end)
+
+vim.keymap.set({ "n" }, "<leader>k9", function()
+    local term = Terminal:new({ cmd = "k9s", direction = "float", size = 0.8 })
+    term:toggle()
+end)
