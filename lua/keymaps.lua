@@ -49,3 +49,8 @@ vim.keymap.set({ "t" }, "<C-t>", function()
         end
     end
 end, { desc = "Close Terms", noremap = true, silent = true })
+
+vim.keymap.set({ "n" }, "<leader>lg", function()
+    local term = Terminal:new({ cmd = "lazygit", direction = "float", size = 0.8 })
+    term:toggle()
+end)
