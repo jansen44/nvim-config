@@ -11,7 +11,8 @@ vim.g.mapleader = ' '
 map('n', '<leader>h', ':nohl<CR>')
 
 map('n', '<leader>e', ':NvimTreeToggle<CR>')
-map('n', '<leader>c', ':bdelete<CR>')
+map('n', '<leader>c', ':BufDel<CR>')
+map('n', '<leader>q', ':close<CR>')
 map('n', '<leader>bj', ':BufferLinePick<CR>')
 map('n', '<leader>bn', ':BufferLineCycleNext<CR>')
 map('n', '<leader>bb', ':BufferLineCyclePrev<CR>')
@@ -20,8 +21,31 @@ map('n', '<leader>F', ':lua vim.lsp.buf.format()<CR>')
 map('n', '<leader>f', ':Telescope find_files<CR>')
 map('n', '<leader>st', ':Telescope live_grep<CR>')
 
-map('n', '<leader>t', ':ToggleTerm<CR>')
-map('n', '<leader>T', ':ToggleTerm size=40 direction=float<CR>')
+-- Terminals
+local Terminal = require("toggleterm.terminal").Terminal
+local terms = {}
 
-map('t', '<C-t>', '<C-\\><C-n>:ToggleTerm<CR>')
-map('t', '<C-w>', '<C-\\><C-n><C-w>')
+local term_opts = {
+    { cmd = "zsh", direction = "horizontal", size = 0.3 },
+    { cmd = "zsh", direction = "float",      size = nil },
+}
+
+for i, term in pairs(term_opts) do
+    terms[i] = Terminal:new({ cmd = "zsh", count = i, direction = term.direction })
+end
+
+for i, term in ipairs(terms) do
+    local key = string.format("<leader>t%d", i)
+
+    vim.keymap.set({ "n" }, key, function()
+        term:toggle(term.size, term.direction)
+    end, { desc = string.format("Toggle Term %d", term.count), noremap = true, silent = true })
+end
+
+vim.keymap.set({ "t" }, "<C-t>", function()
+    for _, term in pairs(terms) do
+        if term:is_open() then
+            term:close()
+        end
+    end
+end, { desc = "Close Terms", noremap = true, silent = true })
