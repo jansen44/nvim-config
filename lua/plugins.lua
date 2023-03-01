@@ -10,9 +10,9 @@ return require('packer').startup(function(use)
     }
 
     use 'github/copilot.vim'
-	
+
 	use 'nvim-lua/plenary.nvim'
-	
+
 	use 'nvim-telescope/telescope.nvim'
 
 	use 'BurntSushi/ripgrep'
@@ -57,4 +57,6 @@ return require('packer').startup(function(use)
         opt = true,
         run = "npm install --legacy-peer-deps && npm run compile" 
     }
+
+    use 'andweeb/presence.nvim'
 end)
