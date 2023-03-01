@@ -17,5 +17,10 @@ map('n', '<leader>bn', ':BufferLineCycleNext<CR>')
 map('n', '<leader>bb', ':BufferLineCyclePrev<CR>')
 
 map('n', '<leader>F', ':lua vim.lsp.buf.format()<CR>')
-map('n', '<leader>f', ':Telescope find_files<CR>')
+map('n', '<leader>f', ':Telescope find_files hidden=true<CR>')
 map('n', '<leader>st', ':Telescope live_grep<CR>')
+
+map('n', '<leader>t', ':ToggleTerm<CR>')
+map('n', '<leader>T', ':ToggleTerm size=40 direction=float<CR>')
+
+map('t', '<C-t>', '<C-\\><C-n>:ToggleTerm<CR>')

@@ -7,8 +7,7 @@ return require('packer').startup(function(use)
         "neovim/nvim-lspconfig",
         "mfussenegger/nvim-dap",
         "jose-elias-alvarez/null-ls.nvim",
-        "simrat39/rust-tools.nvim"
-
+        "simrat39/rust-tools.nvim",
     }
 
     use 'github/copilot.vim'
@@ -61,4 +60,5 @@ return require('packer').startup(function(use)
     }
 
     use 'andweeb/presence.nvim'
+    use 'akinsho/toggleterm.nvim'
 end)
