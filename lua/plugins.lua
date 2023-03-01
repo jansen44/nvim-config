@@ -1,6 +1,13 @@
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
-	use 'neovim/nvim-lspconfig'
+
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+        "mfussenegger/nvim-dap",
+        "jose-elias-alvarez/null-ls.nvim",
+    }
 
     use 'github/copilot.vim'
 	
@@ -29,4 +36,25 @@ return require('packer').startup(function(use)
 			'nvim-tree/nvim-web-devicons',
 		}
 	}
+
+    use {
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-cmdline',
+        'hrsh7th/nvim-cmp',
+        'L3MON4D3/LuaSnip',
+        'saadparwaiz1/cmp_luasnip',
+    }
+
+    use {
+        "leoluz/nvim-dap-go",
+        "mxsdev/nvim-dap-vscode-js" 
+    }
+
+    use   {
+        "microsoft/vscode-js-debug",
+        opt = true,
+        run = "npm install --legacy-peer-deps && npm run compile" 
+    }
 end)
