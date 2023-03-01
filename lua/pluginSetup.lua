@@ -4,6 +4,10 @@ vim.api.nvim_set_keymap("i", "<S-Right>", 'copilot#Accept("<CR>")', { silent = t
 require('leap').add_default_mappings()
 require('toggleterm').setup()
 
+require("startup").setup({
+    theme = "mini_evil",
+})
+
 require("presence").setup({
     auto_update         = true,
     neovim_image_text   = "😎😎😎",

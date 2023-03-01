@@ -65,4 +65,6 @@ return require('packer').startup(function(use)
 
     use 'tpope/vim-repeat'
     use 'ggandor/leap.nvim'
+
+    use "startup-nvim/startup.nvim"
 end)

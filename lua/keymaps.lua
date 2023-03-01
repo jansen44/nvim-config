@@ -18,8 +18,11 @@ map('n', '<leader>bn', ':BufferLineCycleNext<CR>')
 map('n', '<leader>bb', ':BufferLineCyclePrev<CR>')
 
 map('n', '<leader>F', ':lua vim.lsp.buf.format()<CR>')
-map('n', '<leader>f', ':Telescope find_files<CR>')
+map('n', '<leader>ff', ':Telescope find_files<CR>')
 map('n', '<leader>st', ':Telescope live_grep<CR>')
+
+vim.api.nvim_set_keymap("i", "<C-h>", 'copilot#Previous()', { silent = true, expr = true })
+vim.api.nvim_set_keymap("i", "<C-l>", 'copilot#Previous()', { silent = true, expr = true })
 
 -- Terminals
 local Terminal = require("toggleterm.terminal").Terminal
@@ -59,3 +62,5 @@ vim.keymap.set({ "n" }, "<leader>k9", function()
     local term = Terminal:new({ cmd = "k9s", direction = "float", size = 0.8 })
     term:toggle()
 end)
+
+map('t', '<C-w>', '<C-\\><C-n><C-w>')
