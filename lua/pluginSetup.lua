@@ -1,6 +1,7 @@
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap("i", "<S-Right>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
+require('leap').add_default_mappings()
 require('toggleterm').setup()
 
 require("presence").setup({

@@ -61,4 +61,7 @@ return require('packer').startup(function(use)
 
     use 'andweeb/presence.nvim'
     use 'akinsho/toggleterm.nvim'
+
+    use 'tpope/vim-repeat'
+    use 'ggandor/leap.nvim'
 end)
