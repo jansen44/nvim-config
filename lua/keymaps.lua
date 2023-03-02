@@ -18,7 +18,7 @@ map('n', '<leader>bn', ':BufferLineCycleNext<CR>')
 map('n', '<leader>bb', ':BufferLineCyclePrev<CR>')
 
 map('n', '<leader>F', ':lua vim.lsp.buf.format()<CR>')
-map('n', '<leader>ff', ':Telescope find_files<CR>')
+map('n', '<leader>f', ':Telescope find_files<CR>')
 map('n', '<leader>st', ':Telescope live_grep<CR>')
 
 vim.api.nvim_set_keymap("i", "<C-h>", 'copilot#Previous()', { silent = true, expr = true })

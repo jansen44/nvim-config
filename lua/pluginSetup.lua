@@ -26,6 +26,9 @@ require("presence").setup({
 })
 
 require("nvim-tree").setup({
+    update_focused_file = {
+        enable = true
+    },
     filters = {
         dotfiles = false,
         git_clean = false,
