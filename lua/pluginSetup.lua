@@ -51,7 +51,8 @@ require("bufferline").setup {
 }
 
 require('nvim-treesitter.configs').setup {
-    ensure_installed = { "c", "rust", "javascript", "typescript", "python", "bash", "json", "yaml", "lua", "vim", "help", "go" },
+    ensure_installed = { "c", "rust", "javascript", "typescript", "python", "bash", "json", "yaml", "lua", "vim", "help",
+        "go" },
     context_commentstring = {
         enable = true
     },
@@ -67,4 +68,5 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 
+-- vim.o.termguicolors = false
 vim.cmd [[colorscheme tokyonight]]
