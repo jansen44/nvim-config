@@ -67,4 +67,8 @@ return require('packer').startup(function(use)
     use 'ggandor/leap.nvim'
 
     use "startup-nvim/startup.nvim"
+
+    require('editorconfig').properties.foo = function(bufnr, val)
+        vim.b[bufnr].foo = val
+    end
 end)
