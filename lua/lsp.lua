@@ -30,12 +30,12 @@ cmp.setup({
         documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
-        ['<C-b>'] = cmp.mapping.scroll_docs( -4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        ["<Tab>"] = cmp.mapping(function(fallback)
+            ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+            ['<C-f>'] = cmp.mapping.scroll_docs(4),
+            ['<C-Space>'] = cmp.mapping.complete(),
+            ['<C-e>'] = cmp.mapping.abort(),
+            ['<CR>'] = cmp.mapping.confirm({ select = true }),
+            ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
                 -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
@@ -48,12 +48,11 @@ cmp.setup({
                 fallback()
             end
         end, { "i", "s" }),
-
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
+            ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif luasnip.jumpable( -1) then
-                luasnip.jump( -1)
+            elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
             else
                 fallback()
             end
@@ -82,7 +81,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-    vim.keymap.set('n', '<leader>ee', vim.diagnostic.open_float, bufopts)
+    vim.keymap.set('n', '<leader>k', vim.diagnostic.open_float, bufopts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
@@ -108,7 +107,7 @@ require('lspconfig').rust_analyzer.setup {
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
-        ["rust-analyzer"] = {
+            ["rust-analyzer"] = {
             diagnostics = {
                 enable = true,
                 disabled = { "unresolved-proc-macro" },
