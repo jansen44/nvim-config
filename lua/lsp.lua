@@ -82,6 +82,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    vim.keymap.set('n', '<leader>ee', vim.diagnostic.open_float, bufopts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
@@ -102,3 +103,17 @@ for i in pairs(lsp_servers) do
         capabilities = capabilities
     }
 end
+
+require('lspconfig').rust_analyzer.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = {
+        ["rust-analyzer"] = {
+            diagnostics = {
+                enable = true,
+                disabled = { "unresolved-proc-macro" },
+                enableExperimental = true,
+            },
+        }
+    }
+}
