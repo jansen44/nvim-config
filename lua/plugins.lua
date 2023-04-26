@@ -68,6 +68,8 @@ return require('packer').startup(function(use)
 
     use "startup-nvim/startup.nvim"
 
+    use 'christoomey/vim-tmux-navigator'
+
     require('editorconfig').properties.foo = function(bufnr, val)
         vim.b[bufnr].foo = val
     end
