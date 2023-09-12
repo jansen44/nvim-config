@@ -30,12 +30,12 @@ cmp.setup({
         documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
-            ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-            ['<C-f>'] = cmp.mapping.scroll_docs(4),
-            ['<C-Space>'] = cmp.mapping.complete(),
-            ['<C-e>'] = cmp.mapping.abort(),
-            ['<CR>'] = cmp.mapping.confirm({ select = true }),
-            ["<S-Tab>"] = cmp.mapping(function(fallback)
+        ['<C-b>'] = cmp.mapping.scroll_docs( -4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
                 -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
@@ -98,7 +98,7 @@ require('lspconfig').rust_analyzer.setup {
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
-            ["rust-analyzer"] = {
+        ["rust-analyzer"] = {
             diagnostics = {
                 enable = true,
                 disabled = { "unresolved-proc-macro" },
@@ -107,3 +107,5 @@ require('lspconfig').rust_analyzer.setup {
         }
     }
 }
+
+require("lspconfig").tailwindcss.setup {}
