@@ -51,8 +51,9 @@ require("bufferline").setup {
 }
 
 require('nvim-treesitter.configs').setup {
-    ensure_installed = { "c", "rust", "javascript", "typescript", "python", "bash", "json", "yaml", "lua", "vim", "help",
-        "go" },
+    ensure_installed = { "c", "rust", "javascript", "typescript", "python", "bash", "json", "yaml", "lua", "vim",
+        "go", "zig" },
+    ignore = { "help" },
     context_commentstring = {
         enable = true
     },
