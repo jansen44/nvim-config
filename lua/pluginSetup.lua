@@ -26,6 +26,9 @@ require("presence").setup({
 })
 
 require("nvim-tree").setup({
+    view = {
+        side = 'right',
+    },
     update_focused_file = {
         enable = true
     },
@@ -69,5 +72,8 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 
--- vim.o.termguicolors = false
--- vim.cmd [[colorscheme tokyonight]]
+require('kanagawa').setup({
+    transparent = true,    -- do not set background color
+    terminalColors = true, -- define vim.g.terminal_color_{0,17}
+})
+vim.cmd [[colorscheme kanagawa]]
