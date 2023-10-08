@@ -96,6 +96,16 @@ for i in pairs(lsp_servers) do
     }
 end
 
+require('lspconfig').tsserver.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    init_options = {
+        preferences = {
+            disableSuggestions = true,
+        },
+    },
+})
+
 require('lspconfig').rust_analyzer.setup {
     on_attach = on_attach,
     capabilities = capabilities,
