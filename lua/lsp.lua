@@ -3,6 +3,7 @@ local lsp_servers = {
     "rust_analyzer",
     "tsserver",
     "zls",
+    "gopls",
 }
 
 require("rust-tools").setup()
