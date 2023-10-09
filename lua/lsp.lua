@@ -2,8 +2,10 @@ local lsp_servers = {
     "lua_ls",
     "rust_analyzer",
     "tsserver",
+    "eslint",
     "zls",
     "gopls",
+    "svelte",
 }
 
 require("rust-tools").setup()

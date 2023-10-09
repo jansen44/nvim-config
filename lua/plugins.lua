@@ -29,7 +29,6 @@ return require('packer').startup(function(use)
         end
     }
 
-    use 'folke/tokyonight.nvim'
 
     use {
         'nvim-tree/nvim-tree.lua',
@@ -74,5 +73,6 @@ return require('packer').startup(function(use)
         vim.b[bufnr].foo = val
     end
 
+    use 'folke/tokyonight.nvim'
     use "rebelot/kanagawa.nvim"
 end)
