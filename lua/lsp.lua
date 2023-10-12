@@ -6,6 +6,8 @@ local lsp_servers = {
     "zls",
     "gopls",
     "svelte",
+    "pylsp",
+    "clangd"
 }
 
 require("rust-tools").setup()
