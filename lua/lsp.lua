@@ -7,7 +7,7 @@ local lsp_servers = {
     "gopls",
     "svelte",
     "pylsp",
-    "clangd"
+    "clangd",
 }
 
 require("rust-tools").setup()
@@ -99,6 +99,7 @@ for i in pairs(lsp_servers) do
         capabilities = capabilities
     }
 end
+
 
 require('lspconfig').tsserver.setup({
     on_attach = on_attach,

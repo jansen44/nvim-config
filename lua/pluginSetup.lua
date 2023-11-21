@@ -54,12 +54,21 @@ require("bufferline").setup {
 }
 
 require('nvim-treesitter.configs').setup {
-    ensure_installed = { "c", "rust", "javascript", "typescript", "python", "bash", "json", "yaml", "lua", "vim",
-        "go", "zig" },
-    ignore = { "help" },
-    context_commentstring = {
-        enable = true
+    ensure_installed = {
+        "c",
+        "rust",
+        "javascript",
+        "typescript",
+        "python",
+        "bash",
+        "json",
+        "yaml",
+        "lua",
+        "vim",
+        "go",
+        "zig",
     },
+    ignore = { "help" },
     highlight = {
         enable = true
     },
@@ -72,8 +81,8 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 
-require('kanagawa').setup({
-    transparent = true,    -- do not set background color
-    terminalColors = true, -- define vim.g.terminal_color_{0,17}
+require("catppuccin").setup({
+    flavour = "mocha",
+    transparent_background = true
 })
-vim.cmd [[colorscheme kanagawa]]
+vim.cmd [[colorscheme catppuccin]]

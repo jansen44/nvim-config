@@ -49,13 +49,6 @@ return require('packer').startup(function(use)
 
     use {
         "leoluz/nvim-dap-go",
-        "mxsdev/nvim-dap-vscode-js"
-    }
-
-    use {
-        "microsoft/vscode-js-debug",
-        opt = true,
-        run = "npm install --legacy-peer-deps && npm run compile"
     }
 
     use 'andweeb/presence.nvim'
@@ -73,6 +66,7 @@ return require('packer').startup(function(use)
         vim.b[bufnr].foo = val
     end
 
-    use 'folke/tokyonight.nvim'
-    use "rebelot/kanagawa.nvim"
+    -- use 'folke/tokyonight.nvim'
+    -- use "rebelot/kanagawa.nvim"
+    use { "catppuccin/nvim", as = "catppuccin" }
 end)
