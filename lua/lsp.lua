@@ -2,13 +2,17 @@ local lsp_servers = {
     "lua_ls",
     "rust_analyzer",
     "tsserver",
-    "eslint",
+    "nim_langserver",
     "zls",
     "gopls",
     "svelte",
     "pylsp",
     "clangd",
+    "templ",
+    "prismals"
 }
+
+vim.filetype.add({ extension = { templ = "templ" } })
 
 require("rust-tools").setup()
 
