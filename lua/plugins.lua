@@ -1,6 +1,7 @@
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
+
     use {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -10,7 +11,7 @@ return require('packer').startup(function(use)
         "simrat39/rust-tools.nvim",
     }
 
-    use 'github/copilot.vim'
+    use 'mfussenegger/nvim-jdtls'
 
     use 'nvim-lua/plenary.nvim'
 

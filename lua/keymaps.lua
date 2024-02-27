@@ -21,9 +21,6 @@ map('n', '<leader>F', ':lua vim.lsp.buf.format()<CR>')
 map('n', '<leader>f', ':Telescope find_files<CR>')
 map('n', '<leader>st', ':Telescope live_grep<CR>')
 
-vim.api.nvim_set_keymap("i", "<C-h>", 'copilot#Previous()', { silent = true, expr = true })
-vim.api.nvim_set_keymap("i", "<C-l>", 'copilot#Previous()', { silent = true, expr = true })
-
 -- Terminals
 local Terminal = require("toggleterm.terminal").Terminal
 
